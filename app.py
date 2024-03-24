@@ -23,7 +23,8 @@ def get_weather():
     response = requests.get(url, params=params).json()
     city = response['name']
     temperature = response['main']['temp']
-    return render_template('result.html', city=city, temperature=temperature)
+    humidity = response['main']['humidity']
+    return render_template('result.html', city=city, temperature=temperature, humidity=humidity)
 
 if __name__ == "__main__": # on running python app.py
     app.run(host="0.0.0.0", port= "5000") # run the flask app

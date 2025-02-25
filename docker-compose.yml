@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres # Official Postgres image
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: weather_app
+  redis:
+    image: redis # Official Redis image
+    ports:
+      - "6379:6379"
